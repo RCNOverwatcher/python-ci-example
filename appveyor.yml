@@ -14,7 +14,7 @@ install:
 - pip install -r requirements.txt
 
 build_script:
-- flet pack main.py --name SolarX --icon icon.png --product-name SolarX --product-version "1.0.0" --copyright "Copyright (c) 2023 JaVelin"
+- flet pack main.py --name solarx --icon icon.png --product-name solarx --product-version "1.0.0" --copyright "Copyright (c) 2023 JaVelin"
 
 test: off
 
@@ -35,10 +35,10 @@ for:
     - image: Visual Studio 2019
 
   after_build:
-  - 7z a counter-windows.zip %CD%\dist\*.exe
+  - 7z a solarx-windows.zip %CD%\dist\*.exe
 
   artifacts:
-  - path: counter-windows.zip
+  - path: solarx-windows.zip
 
 #
 #   macOS package
@@ -49,10 +49,10 @@ for:
     - image: macOS
 
   after_build:
-  - tar -czvf counter-macos.tar.gz -C dist counter.app
+  - tar -czvf solarx-macos.tar.gz -C dist solarx.app
 
   artifacts:
-  - path: counter-macos.tar.gz
+  - path: solarx-macos.tar.gz
 
 #
 #   Linux package
@@ -63,8 +63,8 @@ for:
     - image: Ubuntu
 
   after_build:
-  - tar -czvf counter-linux.tar.gz -C dist counter
+  - tar -czvf solarx-linux.tar.gz -C dist solarx
 
   artifacts:
-  - path: counter-linux.tar.gz
+  - path: solarx-linux.tar.gz
 
